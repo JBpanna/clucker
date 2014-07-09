@@ -11,16 +11,18 @@
 
 #chick_index_button { position: absolute; top: 45px; right: 5%;}
 
-#chicken_love {display: block; margin-left: auto; margin-right: auto; width: auto; height: 300px}
+.chick_center { display: block; margin-left: auto; margin-right: auto; width: 702px;} 
 
-#chicken_slogan_wrap
+.chick_slogan_wrap
 {
-background: transparent url(/app/assets/images/chicken_love.jpeg);
+background: url(http://fc04.deviantart.net/fs70/f/2012/085/4/5/i_like_u_as_my_harvest_moon_chickens_by_malejoveza-d4u1hvg.png) no-repeat;
 width:auto;
 height:300px;
 line-height: 300px;
-text-align: center;
+margin-top: 20px;
+border: solid 3px #ff881b;
 }
 
+.chick_slogan_wrap .chick_slogan_inwrap {color: #ff7e3c; width: 300px; margin-left: auto; margin-right: auto; line-height: 5px;}
 
 
