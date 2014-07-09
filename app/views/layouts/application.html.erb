@@ -6,7 +6,31 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="chicken_page">
+
+  <div id="chicken_menu">
+
+    <h1 id="chick_logo">Anime Chicken Lovers' Group </h1>
+
+    <div class="chick_menu">
+
+      <a href="/main/index">Homepage: All the Anime Chicken Lovers in One Place. </a></br>
+
+      <a href="/main/about">About: Everything You Ever Wanted to Know about Anime Chicken Lovers'</a></br>
+
+      <a href="/main/contact">Contact: Connect to Other Anime Chicken Lovers' </a></br>
+
+      <a href="/main/gallery">Gallery: Hot Picts of Anime Chickens</a></br>
+
+      <a href="/main/video">Video: The Hottest Chicken Videos</a></br>
+
+
+    <div id="chick_slogan_wrap">
+        <h3 id="chick_slogan"> Animated Chickens Unite! </h3>
+    </div>
+
+  
+</div>
 
 <%= yield %>
 

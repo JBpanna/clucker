@@ -1,3 +1,26 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.chicken_page { background: #fff2a9; color: #000; border: solid 3px #ff7e3c; padding-left: 10px; padding-right: 10px;}
+
+#chicken_menu { padding-left: 20px; padding-right: 20px; width: 100%}
+.chick_menu { margin-left: auto; margin-right: auto; color: #b36013; width: 35em; margin-top: 8%;}
+
+#chick_logo { position: absolute; top: 20px; left: 5%; color: #ff881b;} 
+
+#chick_index_button { position: absolute; top: 45px; right: 5%;}
+
+#chicken_love {display: block; margin-left: auto; margin-right: auto; width: auto; height: 300px}
+
+#chicken_slogan_wrap
+{
+background: transparent url(/app/assets/images/chicken_love.jpeg);
+width:auto;
+height:300px;
+line-height: 300px;
+text-align: center;
+}
+
+
+
