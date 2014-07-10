@@ -4,7 +4,7 @@
 
 .chicken_page { background: #fff2a9; color: #000; border: solid 3px #ff7e3c; padding-left: 10px; padding-right: 10px;}
 
-#chicken_menu { padding-left: 20px; padding-right: 20px; width: 100%}
+#chicken_menu { padding-left: 20px; padding-right: 20px; width: 100%; font-size: 18px;}
 .chick_menu { margin-left: auto; margin-right: auto; color: #b36013; width: 35em; margin-top: 8%;}
 
 #chick_logo { position: absolute; top: 20px; left: 5%; color: #ff881b;} 
@@ -19,10 +19,22 @@ background: url(http://fc04.deviantart.net/fs70/f/2012/085/4/5/i_like_u_as_my_ha
 width:auto;
 height:300px;
 line-height: 300px;
-margin-top: 20px;
+margin-top: 25px;
 border: solid 3px #ff881b;
 }
 
-.chick_slogan_wrap .chick_slogan_inwrap {color: #ff7e3c; width: 300px; margin-left: auto; margin-right: auto; line-height: 5px;}
+.chick_slogan_wrap .chick_slogan_inwrap {color: #ff7e3c; width: 320px; margin-left: auto; margin-right: auto; line-height: 5px;}
+
+p { margin-bottom: 3px; line-height: 22px; font-size: 18px;}
+
+.chick_image { height: 300px; border: solid 3px #ff881b; width: auto; margin-left: auto; margin-right: auto; margin-top: 3%; margin-bottom: 3%}
+
+.chick_img_package {font-size: 14px; text-align: center;}
+
+h3 {color: #ff7e3c;}
+
+.chick_form { margin-bottom: 6px; line-height: 30px; font-size: 18px;}
+
+.chick_petition { margin-bottom: 6px; line-height: 30px; font-size: 22px; color: #ff881b;}
 
 
