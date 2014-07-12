@@ -2,14 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body { background: #fff2a9; color: #000; border: solid 3px #ff7e3c; padding-left: 10px; padding-right: 10px; font-family: Helvetica;}
+@font-face {
+	font-family: RMEgg;
+	src: URL(RMEgg)format(ttf);
+}
+
+body { background: url(http://slodive.com/wp-content/uploads/2011/05/polka-dot-backgrounds/pastel-polka-dots.jpg); color: #000; border: solid 3px #ff7e3c; padding-left: 10px; padding-right: 10px; font-family: Helvetica;}
 
 .chicken_menu { font-family: 'Chicle', sans-serif; padding-left: 20px; padding-right: 20px; width: 100%; font-size: 18px; line-height: 22px}
-.chick_menu { margin-left: auto; margin-right: auto; color: #b36013; width: 35em; margin-top: 10%;}
+.chick_menu { margin-left: auto; margin-right: auto; color: #b36013; width: 35em; margin-top: 10%; font-size: 22px; line-height: 26px;}
 
-#chick_logo { position: absolute; top: 26px; left: 5%; color: #ff881b; font-size: 48px} 
+#chick_logo { position: absolute; top: 26px; left: 5%; color: #ff881b; font-size: 48px;} 
 
-#chick_index_button { position: absolute; top: 45px; right: 5%; color: rgba(255,120,0,.8);}
+.chick_cap_menu { font-family: 'RMEgg' , 'Chicle', sans-serif;}
+
+.chick_button_form { color: #ff881b;}
+.chick_index_button { position: absolute; top: 45px; right: 5%; color: #ff881b;}
 
 .chick_center { display: block; margin-left: auto; margin-right: auto; width: 702px;} 
 
@@ -23,15 +31,19 @@ margin-top: 25px;
 border: solid 3px #ff881b;
 }
 
-.chick_slogan_wrap .chick_slogan_inwrap {font-family: 'Princess Sofia', sans-serif; color: #ff6e3c; width: 320px; margin-left: auto; margin-right: auto;line-height: 4px; font-size: 20px}
+.chick_slogan_wrap .chick_slogan_inwrap {font-family: 'Princess Sofia', sans-serif; color: #ff6e3c; width: 320px; margin-left: auto; margin-right: auto;line-height: 4px; font-size: 20px; }
+
+.chick_outer { width: 96.5%; padding: 20px; float: left;}
+.chick_resources { background-color: #fff4c9; width: 40%; height: 500px; margin-left: 4.7%; margin-right: 4.7%; float: left; border: solid 3px #ff7e3c; overflow-y: scroll;}
+.chick_post { width: 100%; font-size: 18px; padding: 3%; float: left; border: solid 3px #ff7e3c;}
 
 p { margin-bottom: 3px; line-height: 22px; font-size: 18px; max-width: 700px;}
 
-.chick_image { height: 300px; border: solid 3px #ff881b; width: auto; margin-left: auto; margin-right: auto; margin-top: 3%; margin-bottom: 3%}
+.chick_image { height: 300px; border: solid 3px #ff881b; width: auto; margin-left: auto; margin-right: auto; margin-top: 3%; margin-bottom: 3%;}
 
 .chick_img_package {font-size: 14px; text-align: center;}
 
-h3 { font-family: 'Chicle', sans-serif; color: #ff7e2c; max-width: 700px;}
+h3 { font-family: 'Chicle', sans-serif; color: #ff7e2c; font-size: 30px; text-align: center;}
 
 .chick_form { margin-bottom: 6px; line-height: 30px; font-size: 18px;}
 
@@ -39,6 +51,13 @@ h3 { font-family: 'Chicle', sans-serif; color: #ff7e2c; max-width: 700px;}
 
 .chick_about { width: 15em; font-size: 18px; float: left; margin-left: 1.7em; margin-right: 1.7em;}
 
+.chicken_whisper {color: #000; font-size: 14px; opacity: .7;}
+
 .clear_float { clear: both;}
+
+a:hover
+ {
+ 	color:orange;
+ }
 
 
