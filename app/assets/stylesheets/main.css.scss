@@ -12,9 +12,7 @@ body { color: #000; padding-left: 10px; padding-right: 10px; font-family: Helvet
 .chick_cap_menu { font-family: 'Chicle', sans-serif; font-size: 30px;}
 
 .chick_button_form { color: #ff881b;}
-#chick_index_button { position: absolute; top: 45px; right: 5%; color: #ff6e3c; border: solid 2px #ff6e3c; border-radius: 50%; height: 50px; width: auto; background-color: #fff7f5; box-shadow: 5px 5px 5px;}
-#chick_index_button:hover {color: orange; border: solid 2px #ff7f4d; background-color: #fff7f6;}
-#chick_index_button:active {color: #e19716; border: solid 2px #ee6e3c; background-color: #eee8e5; box-shadow: 1px 1px 1px;}
+#chick_index_button { position: absolute; top: 45px; right: 5%;}
 
 .chick_center { display: block; margin-left: auto; margin-right: auto; width: 702px; margin-bottom: 30px;} 
 
@@ -97,13 +95,16 @@ a:hover
 
  .hide {display: none;}
 
- .hide_image {position: absolute; top: 0px; left: 0px; right: 0px; left: 0px; margin-top: 0px; margin-bottom: 0px; height: auto; width: 100%; z-index: 30; opacity: 0.2;} 
+ .hide_image {position: fixed; padding: 0; top: 0px; right: 0px; left: 0px; margin: 0px; height: 100%; width: 100%; opacity: 0.2; z-index: 5;} 
 
-.chick_login { margin: auto; border: solid 2px #ff881b; background-color: yellow; height: 330px; width: 550px; box-shadow: 10px 10px 10px; border-radius: 50%; color: #ff6e3c; z-index: 50; margin: auto; opacity: 1;}
-.chick_login_center { margin-top: 110px; text-align: center; height: auto; width: auto;}
+.chick_login {position: fixed; top: 25%; right: 28%; border: solid 2px #ff881b; background-color: yellow; height: 330px; width: 550px; box-shadow: 10px 10px 10px; border-radius: 50%; color: #ff6e3c; z-index: 500; opacity: 1;}
+.chick_login_center { margin-top: 110px; text-align: center; height: auto; width: auto; z-index: 500;}
 .chick_login_txt { position: relative; margin: auto; font-size: 18px; line-height: 36px;}
 .chick_login_fancy { font-size: 20px; position: relative; margin: auto; line-height: 36px; font-family: 'Princess Sofia', sans-serif; color: red;}
 
+.chick_all_button {color: #ff6e3c; border: solid 2px #ff6e3c; border-radius: 50%; height: 50px; width: auto; background-color: #fff7f5; box-shadow: 5px 5px 5px;}
+.chick_all_button:hover {color: orange; border: solid 2px #ff7f4d; background-color: #fff7f6;}
+.chick_all_button:active {color: #e19716; border: solid 2px #ee6e3c; background-color: #eee8e5; box-shadow: 1px 1px 1px;}
 
  
  

@@ -4,12 +4,11 @@ class MainController < ApplicationController
   end
 
   def api
-  	id = params[:id]
-  	name = params[:name]
-  	p id + " | " + name
+  	login = params[:login]
+  	p login
   	
 
-  	test = {id: id, name: name}
+  	test = {login: login}
   	p test 
 
   	render json: test 
