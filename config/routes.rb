@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  
+
   root 'main#index'
-  get 'main/index'
   get 'main/about'
   get 'main/gallery'
   get 'main/contact'
   get 'main/video'
+  post 'main/index'
+  post 'main/api'
+  get 'main/api'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
