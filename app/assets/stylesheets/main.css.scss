@@ -104,10 +104,12 @@ a:hover
 
 .chick_all_button {color: #ff6e3c; border: solid 2px #ff6e3c; border-radius: 50%; height: 50px; width: auto; background-color: #fff7f5; box-shadow: 5px 5px 5px;}
 .chick_all_button:hover {color: orange; border: solid 2px #ff7f4d; background-color: #fff7f6;}
-.chick_all_button:active {color: #e19716; border: solid 2px #ee6e3c; background-color: #eee8e5; box-shadow: 1px 1px 1px;}
-
+.chick_all_button:active {color: #e19716; border: solid 2px #ee6e3c; background-color: #eee8e5; box-shadow: 1px 1px 1px; outline: none;}
+.chick_all_button:focus {outline: none;}
 .chicken_output {color: red; background: #e19716;}
- 
+
+input:focus {outline-color: #ce561c;}
+
  
 
 

@@ -3,12 +3,13 @@ class MainController < ApplicationController
 
   end
 
-  def api
-  	login = params[:login]
-  	p login
-  	
+  def signin
+  	firstServer = params[:firstNameLogin]
+    lastServer = params[:lastNameLogin]
+    emailServer = params[:EMailLogin]
+  	p firstServer + '|' + lastServer + '|' + emailServer  	
 
-  	test = {login: login}
+  	test = {first: firstServer, last: lastServer, email: emailServer}
   	p test 
 
   	render json: test 

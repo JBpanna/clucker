@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get 'main/gallery'
   get 'main/contact'
   get 'main/video'
-  post 'main/index'
-  post 'main/api'
-  get 'main/api'
+  get 'main/index'
+  post 'main/signin'
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
