@@ -5,12 +5,14 @@ $(document).ready(function(){
             $('.hide_image').removeClass('hide');
             $('.chick_login').fadeIn()
         			     .removeClass('hide');
+            $('.chick_fname').focus();
         });
     
 
         $('#chick_cancel_button').click(function(){
     	   $('.hide_image').addClass('hide');
     	   $('.chick_login').hide();
+
 	    });  				
 
         $('#chick_continue_button').click(function(){ 

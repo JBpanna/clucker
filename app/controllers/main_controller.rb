@@ -7,9 +7,9 @@ class MainController < ApplicationController
   	firstServer = params[:firstNameLogin]
     lastServer = params[:lastNameLogin]
     emailServer = params[:EMailLogin]
-  	p firstServer + '|' + lastServer + '|' + emailServer  	
+  	p firstServer + ' | ' + lastServer + ' | ' + emailServer  	
 
-  	test = {first: firstServer, last: lastServer, email: emailServer}
+  	test = {clientFirst: firstServer, clientLast: lastServer, clientEmail: emailServer}
   	p test 
 
   	render json: test 
