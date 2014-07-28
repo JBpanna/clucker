@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get 'main/contact'
   get 'main/video'
   get 'main/index'
-  post 'main/signin'
+  get 'main/member'
+  # post 'main/signin'
+  post 'main/privatePost'
+
   
 
 

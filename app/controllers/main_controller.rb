@@ -3,17 +3,28 @@ class MainController < ApplicationController
 
   end
 
-  def signin
-  	firstServer = params[:firstNameLogin]
-    lastServer = params[:lastNameLogin]
-    emailServer = params[:EMailLogin]
-  	p firstServer + ' | ' + lastServer + ' | ' + emailServer  	
+  # def signin
+  	# firstServer = params[:firstNameLogin]
+    # lastServer = params[:lastNameLogin]
+    # emailServer = params[:EMailLogin]
+  	# p firstServer + ' | ' + lastServer + ' | ' + emailServer  	
 
-  	test = {clientFirst: firstServer, clientLast: lastServer, clientEmail: emailServer}
-  	p test 
+  	# test = {clientFirst: firstServer, clientLast: lastServer, clientEmail: emailServer}
+  	# p test 
 
-  	render json: test 
-    # ask david why we don't need head ok here
+  	# render json: test 
+    
+  # end
+
+  def privatePost
+    privatePostServer = params[:privatePost]
+    p privatePostServer
+
+    test = {clientPrivatePost: privatePostServer}
+    p test
+
+    render json: test
+
   end
 
 end
