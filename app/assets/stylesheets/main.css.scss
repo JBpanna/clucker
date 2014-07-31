@@ -3,16 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body { color: #000; padding-left: 10px; padding-right: 10px; font-family: Helvetica; background-color: #fffe6e;}
-.chicken_menu { font-family: 'Chicle', sans-serif; padding-left: 20px; padding-right: 20px; width: 100%; font-size: 18px; line-height: 22px;}
-.chick_menu { margin-left: 50%; color: #b36013; width: 25em; margin-top: 4%; font-size: 22px; line-height: 26px; height: 3em;}
+body { color: #000; font-family: Helvetica; background-color: #fffe6e;}
+.chicken_menu { font-family: 'Chicle', sans-serif; font-size: 18px; line-height: 22px;}
+.chick_menu { color: #b36013; font-size: 22px; line-height: 26px; height: 3em; margin-top: 4%; text-align: center;}
 
-#chick_logo { position: absolute; top: 26px; left: 5%; color: #ff5f3c; font-size: 48px;} 
+#chick_logo { color: #ff5f3c; font-size: 52px; margin-top: 4%;} 
 
-.chick_cap_menu { font-family: 'Chicle', sans-serif; font-size: 26px;}
+.chick_cap_menu { font-family: 'Chicle', sans-serif; font-size: 26px; top: 26px;}
 
 .chick_button_form { color: #ff881b;}
-#chick_index_button { position: absolute; top: 45px; right: 5%;}
+// #chick_index_button { position: absolute; top: 45px; right: 5%;}
 
 .chick_center { display: block; margin-left: auto; margin-right: auto; width: 702px; margin-bottom: 30px;} 
 
@@ -59,8 +59,6 @@ h3 { font-family: 'Chicle', sans-serif; color: orange; font-size: 30px; text-ali
 
 .clear_float { clear: both;}
 
-.chick_menu a { display: inline-block; margin-left: 1.5%; margin-right: 1.5%;}
-
 a:hover
  {
  	color:orange;
@@ -98,11 +96,11 @@ input:focus {outline-color: #ce561c;}
 .chick_gallery .chick_image { margin-left: 3%; margin-right: 3%;}
 
 .chick_member {color: #fb580f;}
-.my_peeps_picture {height: 50; border: solid 3px #ff881b; width: auto; margin-right: 5%; margin-left: 5%;}
+.my_peeps_picture {height: 100px; border: solid 3px #ff881b; width: auto; margin: 3%}
 
 .chick_resources textarea {width: 90%;}
 .chick_resources textarea:focus {background-color: #f4f8ea; outline: none; box-shadow: 3px 3px 5px; border: solid 2px #ee6e3c;}
-
+// #gradient > .striped(#333; 45deg);
 
 
 
