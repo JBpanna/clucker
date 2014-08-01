@@ -3,16 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body { color: #000; font-family: Helvetica; background-color: #fffe6e;}
+body { color: #000; font-family: Helvetica; background-color: #fffe6e; padding: 0px; margin: 0px;}
 .chicken_menu { font-family: 'Chicle', sans-serif; font-size: 18px; line-height: 22px;}
-.chick_menu { color: #b36013; font-size: 22px; line-height: 26px; height: 3em; margin-top: 4%; text-align: center;}
+.chick_menu { color: #b36013; font-size: 22px; line-height: 26px; height: 3em; margin-top: 4%;}
 
 #chick_logo { color: #ff5f3c; font-size: 52px; margin-top: 4%;} 
 
 .chick_cap_menu { font-family: 'Chicle', sans-serif; font-size: 26px; top: 26px;}
 
 .chick_button_form { color: #ff881b;}
-// #chick_index_button { position: absolute; top: 45px; right: 5%;}
+#chick_index_button { margin-top: 4%; margin-left: 0px; margin-right: 0px; font-size: 16px; height: 45px; width: 70px;}
 
 .chick_center { display: block; margin-left: auto; margin-right: auto; width: 702px; margin-bottom: 30px;} 
 
@@ -64,14 +64,14 @@ a:hover
  	color:orange;
  }	
 
- a .chick_tooltip {
-    color: #ae3c1f;
-    font-size: 20px;
-    margin-top: 3%;
-    width: auto;
-    z-index: 5;
-    position: absolute;
- }
+ //a .chick_tooltip {
+    //color: #ae3c1f;
+    //font-size: 20px;
+    //margin-top: 3%;
+    //width: auto;
+    //z-index: 5;
+    //position: absolute;
+ //}
 
  .chick_outer p {text-align: center; margin-left: auto; margin-right: auto; margin-top: -3%;}
 
