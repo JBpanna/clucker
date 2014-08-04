@@ -1,30 +1,48 @@
 class MainController < ApplicationController
   def index
-
+    @users=Login.all
   end
 
-  # def signin
-  	# firstServer = params[:firstNameLogin]
-    # lastServer = params[:lastNameLogin]
-    # emailServer = params[:EMailLogin]
-  	# p firstServer + ' | ' + lastServer + ' | ' + emailServer  	
+   def login
+  	 loginNameServer = params[:nameLogin]
+      passwordServer = params[:passwordLogin]
+     # emailServer = params[:EMailLogin]
+  	 
 
-  	# test = {clientFirst: firstServer, clientLast: lastServer, clientEmail: emailServer}
-  	# p test 
+  	 testlogin = {login: loginNameServer, password: passwordServer}
+     p testlogin
 
-  	# render json: test 
+     person=Login.create(
+       login: loginNameServer,
+       password: passwordServer)
+       person.save
+
+      # person=Login.find_by(login: "Captain Wingman")
+      # person.destroy
+
+      head :ok
     
+   end
+
+   def memberLogin
+    loginNameServer = params[:nameLogin]
+    passwordServer = params[:passwordLogin]
+
+    @handle=Login.all.findby(login: loginNameServer)
+    @passphrase=Login.all.findby(password: passwordServer)
+
+    head :ok
+   end
+
+  # def privatePost
+    # privatePostServer = params[:privatePost]
+    # p privatePostServer
+
+    # test = {clientPrivatePost: privatePostServer}
+    # p test
+
+    # render json: test
+
   # end
-
-  def privatePost
-    privatePostServer = params[:privatePost]
-    p privatePostServer
-
-    test = {clientPrivatePost: privatePostServer}
-    p test
-
-    render json: test
-
-  end
 
 end

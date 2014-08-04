@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get 'main/video'
   get 'main/index'
   get 'main/member'
-  # post 'main/signin'
+  post 'main/login'
   post 'main/privatePost'
+  post 'main/memberLogin'
+  get 'main/login'
+  
 
   
 
