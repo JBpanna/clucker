@@ -61,7 +61,7 @@ $(document).ready(function(){
         $.ajax({
             url: '/main/login',
             data: { nameLogin: loginName, passwordLogin: passwordLogin},
-            type: '?'
+            type: 'POST'
         }).done(function(data){
             console.log(data);
             $(location).attr('href',"/main/member");   
@@ -105,29 +105,17 @@ $(document).ready(function(){
 
    function Login(){
         var loginName = $('input:text[name=chick_login_name]').val();
-        var passwordLogin = $('input:text[name=chick_password2]').val();
+        var passwordLogin = $('input:text[name=chick_password]').val();
 
         $.ajax({
             url: '/main/login',
             data: { nameLogin: loginName, passwordLogin: passwordLogin},
-            type: 'get'
+            type: 'GET'
         }).done(function(data){
             console.log(data);
-        }
+        });
 
-         var handle = $(<%=@handle%>)
-         var passphrase = $(<%=@passphrase%>)
-
-          if (handle==nil || passphrase==nil)
-                 {$('.chicken_output').text("Go to our contact page to join us.");
-                 return false;   
-         }
-         
-         {$(location).attr('href',"/main/member");
-         $('.chick_member').val(loginName);
-         }
-
-    });
+    };
 
 });
    

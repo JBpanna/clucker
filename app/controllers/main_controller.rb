@@ -17,7 +17,7 @@ class MainController < ApplicationController
        password: passwordServer)
        person.save
 
-      # person=Login.find_by(login: "Captain Wingman")
+      # person=Login.find_by()
       # person.destroy
 
       head :ok
@@ -28,11 +28,11 @@ class MainController < ApplicationController
     loginNameServer = params[:nameLogin]
     passwordServer = params[:passwordLogin]
 
-    @handle=Login.all.findby(login: loginNameServer)
-    @passphrase=Login.all.findby(password: passwordServer)
+    @handle=Login.all.find_by(login: loginNameServer)
+    @passphrase=Login.all.find_by(password: passwordServer)
 
     head :ok
-   end
+    end
 
   # def privatePost
     # privatePostServer = params[:privatePost]
