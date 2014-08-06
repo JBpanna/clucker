@@ -108,7 +108,7 @@ $(document).ready(function(){
         var passwordLogin = $('input:text[name=chick_password]').val();
 
         $.ajax({
-            url: '/main/login',
+            url: '/main/memberLogin',
             data: { nameLogin: loginName, passwordLogin: passwordLogin},
             type: 'GET'
         }).done(function(data){

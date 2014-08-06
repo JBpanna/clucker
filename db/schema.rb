@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140804000212) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "logins", force: true do |t|
     t.string   "login"
     t.string   "password"
@@ -20,27 +23,12 @@ ActiveRecord::Schema.define(version: 20140804000212) do
     t.datetime "updated_at"
   end
 
-  create_table "sqlite_sp_functions", id: false, force: true do |t|
-    t.text "name"
-    t.text "text"
-  end
-
-# Could not dump table "sqlite_stat1" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
-
-# Could not dump table "sqlite_stat4" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
-
-  create_table "sqlite_vs_links_names", id: false, force: true do |t|
-    t.text "name"
-    t.text "alias"
-  end
-
-  create_table "sqlite_vs_properties", id: false, force: true do |t|
-    t.text "parentType"
-    t.text "parentName"
-    t.text "propertyName"
-    t.text "propertyValue"
+  create_table "users", force: true do |t|
+    t.string   "login"
+    t.string   "password"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
