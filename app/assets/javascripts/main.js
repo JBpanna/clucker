@@ -1,6 +1,9 @@
 
 $(document).ready(function(){
 
+    var chick_member = $('.chick_member');
+
+
     // $(.chick_member).ready(function(){
         // $('.chick_index_button').addClass('hide');
         // $('.chick_logout_button').removeClass('hide');

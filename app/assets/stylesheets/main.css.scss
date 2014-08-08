@@ -65,7 +65,7 @@ h3 { font-family: 'Chicle', sans-serif; color: orange; font-size: 30px; text-ali
 
 .chick_about { width: 30%; font-size: 18px; float: left; margin-left: 1.5%; margin-right: 1.5%; min-width: 300px; margin-top: 5%;}
 
-.chicken_whisper { color: #000; font-size: 14px; opacity: .7;}
+.chicken_whisper { color: #000; font-size: 14px; opacity: .7; padding: 3%;}
 
 .chick_video_package {text-align: center; padding: 10px; margin-left: auto; margin-right: auto; width: 100%;}
 
@@ -96,8 +96,8 @@ a:hover
 
  .hide_image {position: fixed; padding: 0; top: 0px; right: 0px; left: 0px; margin: 0px; height: 100%; width: 100%; opacity: 0.2; z-index: 5;} 
 
-.chick_login {position: fixed; top: 25%; right: 28%; border: solid 2px #ff881b; background-color: yellow; height: 330px; width: 550px; box-shadow: 10px 10px 10px; border-radius: 50%; color: #ff6e3c; z-index: 500; opacity: 1;}
-.chick_login_center { margin-top: 110px; text-align: center; height: auto; width: auto; z-index: 500;}
+.chick_login {position: fixed; top: 25%; right: 28%; left: 28%; margin-right: auto; margin-left: auto; padding-left: auto; padding-right: auto; border: solid 2px #ff881b; background-color: yellow; height: 330px; max-width: 550px; box-shadow: 10px 10px 10px; border-radius: 50%; color: #ff6e3c; z-index: 500; opacity: 1;}
+.chick_login_center { margin-top: 20%; text-align: center; height: auto; width: auto; z-index: 500; margin-left: auto; margin-right: auto; padding-left: auto; padding-right: auto;}
 .chick_login_txt { position: relative; margin: auto; font-size: 18px; line-height: 36px;}
 .chick_login_fancy { font-size: 20px; position: relative; margin: auto; line-height: 36px; font-family: 'Princess Sofia', sans-serif; color: red;}
 
