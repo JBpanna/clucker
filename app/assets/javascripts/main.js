@@ -1,7 +1,21 @@
 
 $(document).ready(function(){
 
-	$('#chick_index_button').click(function(){
+    // $(.chick_member).ready(function(){
+        // $('.chick_index_button').addClass('hide');
+        // $('.chick_logout_button').removeClass('hide');
+    // });
+
+    var chick_center = $('.chick_center');
+    var chick_width = chick_center.width();
+
+    if (chick_width<600){
+        $('.chick_slogan_wrap').addClass('chick_slogan_wrap_small')
+                                .removeClass('chick_slogan_wrap');
+        $('iframe').css('width', '350', 'height', '225');
+    };
+
+	$('.chick_index_button').click(function(){
         $('.hide_image').removeClass('hide');
         $('.chick_login').fadeIn()
         			     .removeClass('hide');
@@ -94,28 +108,37 @@ $(document).ready(function(){
    // }
 
    $('#chick_continue_button').click(function(){ 
-        Login();
+        LoginMem();
     }); 
 
     $('.chick_login_center').children().keypress(function(e){ 
         if (e.keyCode==13){
-            Login();
+            LoginMem();
             }
     }); 
 
-   function Login(){
-        var loginName = $('input:text[name=chick_login_name]').val();
-        var passwordLogin = $('input:text[name=chick_password]').val();
+   function LoginMem(){
+        var loginMemName = $('input:text[name=chick_login_name]').val();
+        var passwordMemLogin = $('input:text[name=chick_password]').val();
 
         $.ajax({
             url: '/main/memberLogin',
-            data: { nameLogin: loginName, passwordLogin: passwordLogin},
+            data: { nameMemLogin: loginMemName, passwordMemLogin: passwordMemLogin,},
             type: 'GET'
         }).done(function(data){
             console.log(data);
         });
-
+        $(location).attr('href',"/main/member");
     };
+
+        $('.chick_logout_button').click(function(){
+            $.ajax({
+                url: '/main/logout'
+                }).done(function(){
+                    window.location.replace("/");
+                });
+            
+        });
 
 });
    

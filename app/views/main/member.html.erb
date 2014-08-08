@@ -1,7 +1,13 @@
 <html>
 
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
 <!-- The more I type, the weirder it gets, my cluckie-cluck. -->
- 
+
+</head>
+
  <body>
 
  <div class="container">
@@ -15,8 +21,8 @@
       <div class="chick_resources">
 
         <h3> Anime Chicken Lover Member: </h3>
-        <h3 class="chick_member"><%=@handle.login%></h3>
         
+        <h3 class="chick_member"> </h3>
 
         <h3> Contribute to the Greater Love of Chicken. Post to the Public CluckerBoard. </h3>
         <ul> 
@@ -53,7 +59,7 @@
         <h3> My Peeps </h3>
         <ul>
             <li>
-              <img src="http://www.imghaven.com/images/476765/0437745.jpg" class="img-thumbnail my_peeps_picture"><span><a> Chickenator </a></span>
+              <!-- <img src="http://www.imghaven.com/images/476765/0437745.jpg" class="img-thumbnail my_peeps_picture"><span><a> Chickenator </a></span> -->
             </li>
             <li>
               <img src="http://farm5.static.flickr.com/4112/5408694241_48f32309b0_m.jpg" class="img-thumbnail my_peeps_picture"><span><a> Missy Cluckie-Cluck </a></span>
@@ -84,4 +90,18 @@
 
 </body>
 
+<script type='text/javascript'>
+  runPage();
+
+  $(window).load(function(){
+    $(.chick_index_button).addClass('hide');
+    $(.chick_logout_button).removeClass('hide');
+  });
+</script>
+
 </html>
+
+
+
+
+

@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   post 'main/privatePost'
   post 'main/memberLogin'
   get 'main/login'
+  get 'main/memberLogin'
+  get 'main/privatePost'
+  post 'main/member'
+  get 'main/logout'
+  post 'main/logout'
+  
   
 
   

@@ -11,10 +11,10 @@ body { color: #000; font-family: Helvetica; background-color: #fffe6e; padding: 
 
 .chick_cap_menu { font-family: 'Chicle', sans-serif; font-size: 26px; top: 26px;}
 
-.chick_button_form { color: #ff881b;}
-#chick_index_button { margin-top: 4%; margin-left: 0px; margin-right: 0px; font-size: 16px; height: 45px; width: 70px;}
+.chick_index_button { margin-top: 4%; margin-left: 0px; margin-right: 0px; font-size: 16px; height: 45px; width: 70px;}
+.chick_logout_button { margin-top: 4%; margin-left: 0px; margin-right: 0px; font-size: 16px; height: 45px; width: 70px;}
 
-.chick_center { display: block; margin-left: auto; margin-right: auto; width: 702px; margin-bottom: 30px;} 
+.chick_center { display: block; margin-left: auto; margin-right: auto; max-width: 702px; margin-bottom: 30px; padding-left: auto; padding-right: auto;} 
 
 .chick_slogan_wrap
 {
@@ -22,18 +22,33 @@ background: url(http://fc04.deviantart.net/fs70/f/2012/085/4/5/i_like_u_as_my_ha
 width:auto;
 height:300px;
 line-height: 300px;
-margin-top: 25px;
+margin-top: 50px;
 border: solid 3px #ff881b;
 box-shadow: 5px 5px 8px #ff881b;
 }
 
-.chick_slogan_wrap .chick_slogan_inwrap {font-family: 'Princess Sofia', sans-serif; color: #ef512d; width: 320px; margin-left: auto; margin-right: auto;line-height: 4px; font-size: 20px; }
+.chick_slogan_wrap .chick_slogan_inwrap {font-family: 'Princess Sofia', sans-serif; color: #ef512d; width: 320px; margin-left: auto; margin-right: auto; line-height: 4px; font-size: 20px;}
+
+.chick_slogan_wrap_small
+{
+background: url(http://fc04.deviantart.net/fs70/f/2012/085/4/5/i_like_u_as_my_harvest_moon_chickens_by_malejoveza-d4u1hvg.png) no-repeat; background-size: 100%;
+width:350px;
+height:150px;
+line-height: 200px;
+margin-top: 80px;
+border: solid 3px #ff881b;
+box-shadow: 5px 5px 8px #ff881b;
+margin-right: auto;
+margin-left: auto;
+}
+
+.chick_slogan_wrap_small .chick_slogan_inwrap {font-family: 'Princess Sofia', sans-serif; color: #ef512d; width: 300px; margin-left: auto; margin-right: auto; line-height: 2px; font-size: 16px;}
 
 .chick_outer { width: 100%; float: left;}
-.chick_resources { background-color: #fff4c9; width: 40%; height: 600px; margin: 4.7%; float: left; border: solid 3px #ff7e3c; overflow-y: scroll; box-shadow: 5px 5px 8px #ff881b;}
+.chick_resources { background-color: #fff4c9; width: 40%; height: 600px; margin: 4.7%; float: left; border: solid 3px #ff7e3c; overflow-y: scroll; box-shadow: 5px 5px 8px #ff881b; min-width: 200px;}
 .chick_resources input {width: 90%;}
 .my_peeps_list {background-color: #fff4c9; width: 40%; height: 150px; margin: 4.7%; float: left; border: solid 3px #ff7e3c; overflow-y: scroll; box-shadow: 5px 5px 8px #ff881b;}
-.chick_post { width: 94%; font-size: 18px; padding: 3%; float: left; border: solid 3px #ff7e3c; text-align: left;}
+.chick_post { width: 100%; font-size: 18px; padding: 3%; float: left; border: solid 3px #ff7e3c; text-align: left;}
 
 p { margin-bottom: 3px; line-height: 22px; font-size: 18px; max-width: 700px;}
 
@@ -44,10 +59,11 @@ p { margin-bottom: 3px; line-height: 22px; font-size: 18px; max-width: 700px;}
 h3 { font-family: 'Chicle', sans-serif; color: orange; font-size: 30px; text-align: center;}
 
 .chick_form { margin-bottom: 6px; line-height: 30px; font-size: 18px;}
+.chick_form_bold { margin-bottom: 6px; line-height: 30px; font-size: 22px; color: #ef512d;}
 
 .chick_petition { margin-bottom: 6px; line-height: 30px; font-size: 22px; color: #ff881b;}
 
-.chick_about { width: 30%; font-size: 18px; float: left; margin-left: 1.5%; margin-right: 1.5%}
+.chick_about { width: 30%; font-size: 18px; float: left; margin-left: 1.5%; margin-right: 1.5%; min-width: 300px; margin-top: 5%;}
 
 .chicken_whisper { color: #000; font-size: 14px; opacity: .7;}
 
@@ -76,6 +92,7 @@ a:hover
  .chick_outer p {text-align: center; margin-left: auto; margin-right: auto; margin-top: -3%;}
 
  .hide {display: none;}
+ .show {display: inline-block;}
 
  .hide_image {position: fixed; padding: 0; top: 0px; right: 0px; left: 0px; margin: 0px; height: 100%; width: 100%; opacity: 0.2; z-index: 5;} 
 
@@ -84,7 +101,7 @@ a:hover
 .chick_login_txt { position: relative; margin: auto; font-size: 18px; line-height: 36px;}
 .chick_login_fancy { font-size: 20px; position: relative; margin: auto; line-height: 36px; font-family: 'Princess Sofia', sans-serif; color: red;}
 
-.chick_all_button {color: #ff6e3c; border: solid 2px #ff6e3c; border-radius: 50%; height: 50px; width: auto; background-color: #fff7f5; box-shadow: 5px 5px 5px;}
+.chick_all_button {color: #ff6e3c; border: solid 2px #ff6e3c; border-radius: 50%; background-color: #fff7f5; box-shadow: 5px 5px 5px; font-size: 16px; height: 45px; width: 70px; font-family: 'Chicle', sans-serif;}
 .chick_all_button:hover {color: orange; border: solid 2px #ff7f4d; background-color: #fff7f6;}
 .chick_all_button:active {color: #e19716; border: solid 2px #ee6e3c; background-color: #eee8e5; box-shadow: 1px 1px 1px; outline: none;}
 .chick_all_button:focus {outline: none;}

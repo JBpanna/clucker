@@ -1,6 +1,7 @@
 class MainController < ApplicationController
+ 
   def index
-    @users=Login.all
+    @login=Login.all
   end
 
    def login
@@ -25,14 +26,25 @@ class MainController < ApplicationController
    end
 
    def memberLogin
-    loginNameServer = params[:nameLogin]
-    passwordServer = params[:passwordLogin]
+    loginMemServer = params[:nameMemLogin]
+    passwordMemServer = params[:passwordMemLogin]
+    p loginMemServer
 
-    @handle=Login.all.find_by(login: loginNameServer)
-    @passphrase=Login.all.find_by(password: passwordServer)
+    #idServer = params[:id]
 
+    @userName=Login.find_by(login: loginMemServer, password: passwordMemServer)
+    # render json: @userName.login
+    # flash[:chickUser]=loginMemServer.to_s
+    # session[:user_id] = user_id
+    # @userName = Login.find(session[:logins_id]).login
     head :ok
-    end
+   end
+
+   def logout
+    reset_session
+    head :ok
+   end  
+
 
   # def privatePost
     # privatePostServer = params[:privatePost]
