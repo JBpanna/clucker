@@ -1,24 +1,29 @@
 class MainController < ApplicationController
  
   def index
-    @login=Login.all
+    @user=User.all
   end
 
    def login
-  	 loginNameServer = params[:nameLogin]
+  	  userServer = params[:userLogin]
       passwordServer = params[:passwordLogin]
-     # emailServer = params[:EMailLogin]
+      emailServer = params[:EMailLogin]
+      nameServer = params[:nameLogin]
+    
   	 
 
-  	 testlogin = {login: loginNameServer, password: passwordServer}
+  	 testlogin = {user: userServer, password: passwordServer,
+                  email: emailServer, name: nameServer}
      p testlogin
 
-     person=Login.create(
-       login: loginNameServer,
-       password: passwordServer)
+     person=User.create(
+       user: userServer,
+       password: passwordServer,
+       email: emailServer,
+       name: nameServer)
        person.save
 
-      # person=Login.find_by()
+      # person=User.find_by()
       # person.destroy
 
       head :ok
@@ -26,17 +31,17 @@ class MainController < ApplicationController
    end
 
    def memberLogin
-    loginMemServer = params[:nameMemLogin]
-    passwordMemServer = params[:passwordMemLogin]
+    loginMemServer = params[:loginMem]
+    passwordMemServer = params[:passwordLoginMem]
     p loginMemServer
 
     #idServer = params[:id]
 
-    @userName=Login.find_by(login: loginMemServer, password: passwordMemServer)
+    @userLogin=User.find_by(user: loginMemServer, password: passwordMemServer)
     # render json: @userName.login
     # flash[:chickUser]=loginMemServer.to_s
     # session[:user_id] = user_id
-    # @userName = Login.find(session[:logins_id]).login
+    @userName = User.find(session[:user_id]).user
     head :ok
    end
 
@@ -46,15 +51,20 @@ class MainController < ApplicationController
    end  
 
 
-  # def privatePost
-    # privatePostServer = params[:privatePost]
-    # p privatePostServer
+  def privatePost
+    privatePostServer = params[:privatePost]
+    p privatePostServer
 
-    # test = {clientPrivatePost: privatePostServer}
-    # p test
+    test = {privateCluck: privatePostServer}
+    p test
+
+    privateCluck=PrivateCluck.create(
+       privateCluck: privatePostServer)
+       
+       privateCluck.save
 
     # render json: test
-
-  # end
+    head :ok
+  end
 
 end

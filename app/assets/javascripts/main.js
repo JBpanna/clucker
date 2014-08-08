@@ -55,29 +55,31 @@ $(document).ready(function(){
     
 	
     function Signup(){
-        var loginName = $('input:text[name=chick_login_name2]').val();
+        var loginUser = $('input:text[name=chick_login_name2]').val();
         var passwordLogin = $('input:text[name=chick_password2]').val();
-        // var loginEmail = $('input:text[name=chick_login_email]').val();
-        // var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        var loginEmail = $('input:text[name=chick_e-mail]').val();
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        var loginName = $('input:text[name=chick_name]').val();
     
-        if ((loginName==null || typeof(loginName)=="undefined" || loginName<1) ||
+        if ((loginUser==null || typeof(loginUser)=="undefined" || loginUser<1) ||
+            (loginName==null || typeof(loginName)=="undefined" || loginName<1) ||
             (passwordLogin==null || typeof(passwordLogin)=="undefined" || passwordLogin<1))
-            {$('.chicken_output').text("Go to our contact page to join us.");
+            {$('.chicken_output').text("Tell us more about you.");
             return false;   
         }
-        // if ( !emailReg.test(loginEmail))
-            // {$('.chicken_output').append("We need your e-mail for our spam files.");
-            // return false;
-        // }
+        if ( !emailReg.test(loginEmail))
+            {$('.chicken_output').append("We need your e-mail for our spam files.");
+            return false;
+        }
 
-        // if (loginEmail==null || typeof(loginEmail)=="undefined" || loginEmail<1)
-            // {$('.chicken_output').append("We need your e-mail for our spam files.");
-            // return false;
-        // }
+        if (loginEmail==null || typeof(loginEmail)=="undefined" || loginEmail<1)
+            {$('.chicken_output').append("We need your e-mail for our spam files.");
+            return false;
+        }
 
         $.ajax({
             url: '/main/login',
-            data: { nameLogin: loginName, passwordLogin: passwordLogin},
+            data: { userLogin: loginUser, passwordLogin: passwordLogin, EMailLogin: loginEmail, nameLogin: loginName},
             type: 'POST'
         }).done(function(data){
             console.log(data);
@@ -85,30 +87,28 @@ $(document).ready(function(){
         });
     };
 
-    // $('.btn-danger').click(function(){
-        // var privateCluck=$('textarea[name=private_post]').val();
+    $('.btn-danger').click(function(){
+        var privateCluck=$('textarea:text[name=private_cluck]').val();
        
-        // if (privateCluck.length>142){
-            // alert("Please use less than 142 characters.")
-            // return false;
-        // }
+        if (privateCluck.length>142){
+            // {$('.chicken_output').text("Woah! Too much information.");
+            return false;   
+            }
 
-        // if (privateCluck.length<142){
-            // $.ajax({
-                // url: '/main/privatePost',
-                // data: { privatePost: privateCluck},
-                // type: 'POST'
-            // }).done(function(data){
-                // console.log(data);
-            // });
-        // };
+            if (privateCluck.length<142){
+                $.ajax({
+                    url: '/main/privatePost',
+                    data: { privatePost: privateCluck},
+                    type: 'POST'
+                }).done(function(data){
+                    console.log(data);
+                });
+            
+            }
+        };
         
-    // });
+    });
 
-
-  //  function PostPrivate(){
-
-   // }
 
    $('#chick_continue_button').click(function(){ 
         LoginMem();
@@ -121,12 +121,12 @@ $(document).ready(function(){
     }); 
 
    function LoginMem(){
-        var loginMemName = $('input:text[name=chick_login_name]').val();
-        var passwordMemLogin = $('input:text[name=chick_password]').val();
+        var loginMem = $('input:text[name=chick_login_name]').val();
+        var passwordLoginMem = $('input:text[name=chick_password]').val();
 
         $.ajax({
             url: '/main/memberLogin',
-            data: { nameMemLogin: loginMemName, passwordMemLogin: passwordMemLogin,},
+            data: { loginMem: loginMem, passwordLoginMem: passwordLoginMem},
             type: 'GET'
         }).done(function(data){
             console.log(data);
