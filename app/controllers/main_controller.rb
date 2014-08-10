@@ -1,15 +1,8 @@
 class MainController < ApplicationController
 
-  def chick_user_id
-    @chick_user_id = User.find(id)
-  end
-
-  def clucks
-  @clucks = User.find(id).privateClucks
-  end
 
   def PrivateCluck
-    @private_clucks = PrivateCluck.all
+    @privateClucks = PrivateCluck.all
   end
 
   def User  
@@ -71,10 +64,10 @@ class MainController < ApplicationController
     
     # session[:user_id] = user.id
     
-     @userLogin=User.all.find_by(user: loginMemServer)
+     @user_login=User.all.find_by(user: loginMemServer)
      
 
-     p @userogin = "#{loginMemServer}"
+     p @userlogintext = "#{loginMemServer}"
 
     # puts "****** @userLogin = #{user}"
     
@@ -95,11 +88,11 @@ class MainController < ApplicationController
     
     privatePostServer = params[:privatePost]
 
-    testcluck = {privateCluck: privatePostServer}
+    testcluck = {private_cluck: privatePostServer}
 
     privateCluckVar=PrivateCluck.create(
-       privateCluck: privatePostServer)
-       privateCluck.save
+       private_cluck: privatePostServer)
+       privateCluckVar.save
 
     p "done?"
 

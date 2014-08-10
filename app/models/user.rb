@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
 
-	has_many :privateClucks
-	has_many :privateCluck, :through => :privateClucks
+has_many :private_clucks	
 
 end
