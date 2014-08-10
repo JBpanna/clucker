@@ -90,7 +90,7 @@ $(document).ready(function(){
     $('.btn-danger').click(function(){
 
         
-        var privateCluckInput=$('textarea[name=private_cluck_input]').text();
+        var privateCluckInput=$('textarea[name=message]').val();
     
         if (privateCluckInput.length>142)
             {$('.chicken_output').text("Woah! Too much information.");
@@ -104,8 +104,6 @@ $(document).ready(function(){
             }).done(function(data){
                 console.log(data);
             });
-            
-        
         
     });
 

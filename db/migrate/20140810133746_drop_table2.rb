@@ -1,7 +1,6 @@
 class DropTable2 < ActiveRecord::Migration
   def change
-  	drop_table :logins
-  	drop_table :privateClucks
+  	
   end
 end
 
