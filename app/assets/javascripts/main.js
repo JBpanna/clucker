@@ -87,10 +87,30 @@ $(document).ready(function(){
         });
     };
 
-    $('.btn-danger').click(function(){
+    $('.btn-public').click(function(){
 
         
-        var privateCluckInput=$('textarea[name=message]').val();
+        var publicCluckInput=$('textarea[name=public_message]').val();
+    
+        if (publicCluckInput.length>142)
+            {$('.chicken_output').text("Woah! Too much information.");
+            return false;   
+            }
+            
+            $.ajax({
+                url: '/main/publicCluckController',
+                data: { publicPost: publicCluckInput},
+                type: 'POST'
+            }).done(function(data){
+                console.log(data);
+            });
+        
+    });
+
+    $('.btn-private').click(function(){
+
+        
+        var privateCluckInput=$('textarea[name=private_message]').val();
     
         if (privateCluckInput.length>142)
             {$('.chicken_output').text("Woah! Too much information.");

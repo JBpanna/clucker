@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810133746) do
+ActiveRecord::Schema.define(version: 20140810164755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "private_clucks", force: true do |t|
     t.string   "private_cluck"
+    t.string   "user"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "public_clucks", force: true do |t|
+    t.string   "public_cluck"
     t.string   "user"
     t.integer  "user_id"
     t.datetime "created_at"

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post 'main/privateCluckController'
   get 'main/logout'
   get 'main/memberLogin'
+  post 'main/publicCluckController'
   
   
   

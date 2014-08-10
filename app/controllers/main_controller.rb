@@ -25,7 +25,6 @@ class MainController < ApplicationController
   end
  
   def index
-  
   end
 
    def login
@@ -93,6 +92,22 @@ class MainController < ApplicationController
     privateCluckVar=PrivateCluck.create(
        private_cluck: privatePostServer)
        privateCluckVar.save
+
+    p "done?"
+
+    # render json: test
+    head :ok
+  end
+
+def publicCluckController
+    
+    publicPostServer = params[:publicPost]
+
+    testcluck = {public_cluck: publicPostServer}
+
+    publicCluckVar=PublicCluck.create(
+       public_cluck: publicPostServer)
+       publicCluckVar.save
 
     p "done?"
 
