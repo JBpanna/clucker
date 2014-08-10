@@ -1,33 +1,38 @@
 class MainController < ApplicationController
 
-  def user
+  def chick_user_id
+    @chick_user_id = User.find(id)
+  end
+
+  def clucks
+  @clucks = User.find(id).privateClucks
+  end
+
+  def PrivateCluck
+    @private_clucks = PrivateCluck.all
+  end
+
+  def User  
     @user=User.all
-    head :ok
   end
 
-  def privateCluck
-    @privateCluck=PrivateCluck.all
-    head :ok
+  def about
   end
 
-  # def session
-    # @request.session
-  # end
-
-  def flash
-    @request.flash
+  def contact
   end
 
-  # def cookies
-    # @request.cookie_jar
-  # end
-    
+  def gallery
+  end
+
+  def member
+  end
+
+  def video
+  end
+ 
   def index
-    # s=@request.session
-    # p s
-    # f=@request.flash
-    # p f
-    
+  
   end
 
    def login
@@ -89,14 +94,14 @@ class MainController < ApplicationController
   def privateCluckController
     
     privatePostServer = params[:privatePost]
-    p privatePostServer
 
     testcluck = {privateCluck: privatePostServer}
-    p testcluck
 
     privateCluckVar=PrivateCluck.create(
        privateCluck: privatePostServer)
        privateCluck.save
+
+    p "done?"
 
     # render json: test
     head :ok
