@@ -9,14 +9,9 @@ Rails.application.routes.draw do
   get 'main/index'
   get 'main/member'
   post 'main/login'
-  post 'main/privatePost'
-  post 'main/memberLogin'
-  get 'main/login'
-  get 'main/memberLogin'
-  get 'main/privatePost'
-  post 'main/member'
+  post 'main/privateCluckController'
   get 'main/logout'
-  post 'main/logout'
+  get 'main/memberLogin'
   
   
 

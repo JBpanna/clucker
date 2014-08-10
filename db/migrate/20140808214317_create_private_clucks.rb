@@ -1,6 +1,6 @@
 class CreatePrivateClucks < ActiveRecord::Migration
   def change
-    create_table :privateClucks do |t|
+    create_table :private_clucks do |t|
       t.string :privateCluck
 
       t.timestamps

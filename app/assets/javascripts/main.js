@@ -88,24 +88,24 @@ $(document).ready(function(){
     };
 
     $('.btn-danger').click(function(){
-        var privateCluck=$('textarea:text[name=private_cluck]').val();
-       
-        if (privateCluck.length>142){
-            // {$('.chicken_output').text("Woah! Too much information.");
+
+        
+        var privateCluckInput=$('textarea[name=privateCluckInput]').text();
+    
+        if (privateCluckInput.length>142)
+            {$('.chicken_output').text("Woah! Too much information.");
             return false;   
             }
-
-            if (privateCluck.length<142){
-                $.ajax({
-                    url: '/main/privatePost',
-                    data: { privatePost: privateCluck},
-                    type: 'POST'
-                }).done(function(data){
-                    console.log(data);
-                });
             
-            }
-        };
+            $.ajax({
+                url: '/main/privateCluckController',
+                data: { privatePost: privateCluckInput},
+                type: 'POST'
+            }).done(function(data){
+                console.log(data);
+            });
+            
+        
         
     });
 
@@ -130,18 +130,19 @@ $(document).ready(function(){
             type: 'GET'
         }).done(function(data){
             console.log(data);
+            $(location).attr('href',"/main/member");
         });
-        $(location).attr('href',"/main/member");
+        
     };
 
-        $('.chick_logout_button').click(function(){
-            $.ajax({
-                url: '/main/logout'
-                }).done(function(){
-                    window.location.replace("/");
-                });
-            
+    $('.chick_logout_button').click(function(){
+        $.ajax({
+            url: '/main/logout'
+        }).done(function(){
+            window.location.replace("/");
         });
+            
+    });
 
 });
    

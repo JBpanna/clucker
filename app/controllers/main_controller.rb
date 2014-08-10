@@ -1,7 +1,33 @@
 class MainController < ApplicationController
- 
-  def index
+
+  def user
     @user=User.all
+    head :ok
+  end
+
+  def privateCluck
+    @privateCluck=PrivateCluck.all
+    head :ok
+  end
+
+  # def session
+    # @request.session
+  # end
+
+  def flash
+    @request.flash
+  end
+
+  # def cookies
+    # @request.cookie_jar
+  # end
+    
+  def index
+    # s=@request.session
+    # p s
+    # f=@request.flash
+    # p f
+    
   end
 
    def login
@@ -33,15 +59,24 @@ class MainController < ApplicationController
    def memberLogin
     loginMemServer = params[:loginMem]
     passwordMemServer = params[:passwordLoginMem]
-    p loginMemServer
+
 
     #idServer = params[:id]
 
-    @userLogin=User.find_by(user: loginMemServer, password: passwordMemServer)
+    
+    # session[:user_id] = user.id
+    
+     @userLogin=User.all.find_by(user: loginMemServer)
+     
+
+     p @userogin = "#{loginMemServer}"
+
+    # puts "****** @userLogin = #{user}"
+    
     # render json: @userName.login
     # flash[:chickUser]=loginMemServer.to_s
     # session[:user_id] = user_id
-    @userName = User.find(session[:user_id]).user
+    # @userName = User.find(session[:user_id]).user
     head :ok
    end
 
@@ -51,16 +86,16 @@ class MainController < ApplicationController
    end  
 
 
-  def privatePost
+  def privateCluckController
+    
     privatePostServer = params[:privatePost]
     p privatePostServer
 
-    test = {privateCluck: privatePostServer}
-    p test
+    testcluck = {privateCluck: privatePostServer}
+    p testcluck
 
-    privateCluck=PrivateCluck.create(
+    privateCluckVar=PrivateCluck.create(
        privateCluck: privatePostServer)
-       
        privateCluck.save
 
     # render json: test
