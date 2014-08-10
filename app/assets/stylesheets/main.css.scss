@@ -114,7 +114,7 @@ body {
 	background-size: 100%;
 	width:350px;
 	height:150px;
-	line-height: 200px;
+	line-height: 150px;
 	margin-top: 80px;
 	border: solid 3px #ff881b;
 	box-shadow: 5px 5px 8px #ff881b;
@@ -124,11 +124,12 @@ body {
 
 .chick_slogan_wrap_small .chick_slogan_inwrap {
 	font-family: 'Princess Sofia', sans-serif; 
-	color: #ef512d; width: 300px; 
+	color: red; 
+	width: 310px; 
 	margin-left: auto; 
 	margin-right: auto; 
-	line-height: 2px; 
-	font-size: 16px;
+	line-height: 4px; 
+	font-size: 14px;
 }
 
 .chick_contact_form { 
@@ -172,7 +173,6 @@ body {
 	font-size: 18px; 
 	padding: 3%; 
 	float: left; 
-	border: solid 3px #ff7e3c; 
 	text-align: left;
 }
 
@@ -405,7 +405,7 @@ a:hover
 
 .chicken_output {
 	color: red; 
-	background: #e19716;
+	background: #d08615;
 }
 
 input:focus {
@@ -437,6 +437,9 @@ input:focus {
 
 .chick_resources textarea {
 	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
 }
 
 .chick_resources textarea:focus {
@@ -444,6 +447,18 @@ input:focus {
 	outline: none; 
 	box-shadow: 3px 3px 5px; 
 	border: solid 2px #ee6e3c;
+}
+
+.private_posts {
+	width: 100%;
+	border: solid 2px #ee6e3c;
+
+}
+
+.public_posts {
+	width: 100%;
+	border: solid 2px #ee6e3c;
+
 }
 
 

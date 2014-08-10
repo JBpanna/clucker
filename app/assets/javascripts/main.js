@@ -4,7 +4,7 @@ $(document).ready(function(){
     var chick_member = $('.chick_member');
 
 
-    // $(.chick_member).ready(function(){
+    // $(.chick_member).(function(){
         // $('.chick_index_button').addClass('hide');
         // $('.chick_logout_button').removeClass('hide');
     // });
@@ -12,11 +12,13 @@ $(document).ready(function(){
     var chick_center = $('.chick_center');
     var chick_width = chick_center.width();
 
-    if (chick_width<600){
-        $('.chick_slogan_wrap').addClass('chick_slogan_wrap_small')
-                                .removeClass('chick_slogan_wrap');
-        $('iframe').css('width', '350', 'height', '225');
-    };
+    
+        if (chick_width<600){
+            $('.chick_slogan_wrap').addClass('chick_slogan_wrap_small')
+                                    .removeClass('chick_slogan_wrap');
+            $('iframe').css('width', '350', 'height', '225');
+        };
+  
 
 	$('.chick_index_button').click(function(){
         $('.hide_image').removeClass('hide');
@@ -91,9 +93,14 @@ $(document).ready(function(){
 
         
         var publicCluckInput=$('textarea[name=public_message]').val();
+
+        if (publicCluckInput==null || typeof(publicCluckInput)=="undefined" || publicCluckInput<1)
+            {$('.chick_public_error').append("I didn't quite get that. Could you type it again?");
+            return false;
+        }
     
         if (publicCluckInput.length>142)
-            {$('.chicken_output').text("Woah! Too much information.");
+            {$('.chick_public_error').text("Woah! Too much information.");
             return false;   
             }
             
@@ -103,6 +110,7 @@ $(document).ready(function(){
                 type: 'POST'
             }).done(function(data){
                 console.log(data);
+                $('.public_message').val('');
             });
         
     });
@@ -111,9 +119,14 @@ $(document).ready(function(){
 
         
         var privateCluckInput=$('textarea[name=private_message]').val();
+
+        if (privateCluckInput==null || typeof(privateCluckInput)=="undefined" || privateCluckInput<1)
+            {$('.chick_private_error').append("I didn't quite get that. Could you type it again?");
+            return false;
+        }
     
         if (privateCluckInput.length>142)
-            {$('.chicken_output').text("Woah! Too much information.");
+            {$('.chick_private_error').text("Woah! Too much information.");
             return false;   
             }
             
@@ -123,6 +136,7 @@ $(document).ready(function(){
                 type: 'POST'
             }).done(function(data){
                 console.log(data);
+                $('.private_message').val('');
             });
         
     });
@@ -141,6 +155,7 @@ $(document).ready(function(){
    function LoginMem(){
         var loginMem = $('input:text[name=chick_login_name]').val();
         var passwordLoginMem = $('input:text[name=chick_password]').val();
+
 
         $.ajax({
             url: '/main/memberLogin',

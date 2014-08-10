@@ -15,7 +15,7 @@
         <h3> Anime Chicken Lover Member: </h3>
 
         
-        <h3 class="chick_member"> </h3>
+        <h3 class="chick_member"></h3>
         
         
         <h3> Contribute to the Greater Love of Chicken. Post to the Public CluckerBoard. </h3>
@@ -23,10 +23,10 @@
           <li>
 
             <span class="chick_public_post"> Post About Your Animated Chicken Love </span>
-            <textarea name="public_message"></textarea>
+            <textarea class="public_message" name="public_message"></textarea>
             </br>
             <button type="button" class="btn-public btn-danger">Cluck!</button>
-            <div class="chicken_output">  </div>
+            <div class="chick_public_error chicken_output">  </div>
           </li>
 
           <li>
@@ -42,10 +42,10 @@
           <li>
             
             <span class="chick_private_post"> Post to Your Closest Peeps about your Animated Chicken Love </span>
-            <textarea name="private_message"></textarea>
+            <textarea class="private_message" name="private_message"></textarea>
             </br>
             <button type="button" class="btn-private btn-danger">Cluck!</button>
-            <div class="chicken_output">  </div>
+            <div class="chick_private_error chicken_output">  </div>
          
           </li>
           <li>
@@ -74,14 +74,9 @@
       <div class="chick_resources">
 
         <div class="chick_post">
-          <p> Chickenator: Going to run for governor. Increase the Anime Chickens in California! </p>
+          <textarea class="private_posts" name="private_posts"><%= @privateClucks%></textarea>
         </div>
-        <div class="chick_post">
-          <p> Missy Cluckie-Cluck: Hi! Thanks for commenting on my new chicken pajamas. I'm going to do a sexy chicken-cosplay video soon. Making the wings right now.</p>
-        </div>
-        <div class="chick_post">
-          <p> Otaku the Great and Chicken: Found a new AMV site, so I got a few new chicken music videos. Want to meet this Saturday? </p>
-        </div>
+        
       </div>
 
     </div>

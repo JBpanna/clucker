@@ -1,12 +1,16 @@
 class MainController < ApplicationController
 
+  def PublicCluck
+    @publicClucks = PublicCluck.all? { |e|  }
+  end
+
 
   def PrivateCluck
-    @privateClucks = PrivateCluck.all
+    @privateClucks = PrivateCluck.all? { |e|  }
   end
 
   def User  
-    @user=User.all
+    @user=User.all? { |e|  }
   end
 
   def about
