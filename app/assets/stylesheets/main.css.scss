@@ -30,6 +30,7 @@ body {
 	padding-left: 2%;
 	padding-right: 2%;
 	box-shadow: 5px 5px 8px #ff5f3c;
+	margin-top: 10px;
 }
 
 .chick_menu { 
@@ -311,6 +312,19 @@ a:hover
  	display: inline-block;
  }
 
+ .fail_image {
+ 	position: fixed; 
+ 	padding: 0; 
+ 	top: 0px; 
+ 	right: 0px; 
+ 	left: 0px; 
+ 	margin: 0px; 
+ 	height: 100%; 
+ 	width: 100%; 
+ 	opacity: .7; 
+ 	z-index: 5;
+ } 
+
  .hide_image {
  	position: fixed; 
  	padding: 0; 
@@ -323,6 +337,22 @@ a:hover
  	opacity: 0.2; 
  	z-index: 5;
  } 
+
+ .chick_fail {
+	position: fixed; 
+	top: 10%;
+	right: 28%; 
+	left: 28%; 
+	margin-right: auto; 
+	margin-left: auto; 
+	padding-left: auto; 
+	padding-right: auto; 
+	height: 500px; 
+	max-width: 550px; 
+	color: black; 
+	z-index: 500; 
+	opacity: 1;
+}
 
 .chick_login {
 	position: fixed; 
@@ -346,6 +376,18 @@ a:hover
 
 .chick_login_center { 
 	margin-top: 20%; 
+	text-align: center; 
+	height: auto; 
+	width: auto; 
+	z-index: 500; 
+	margin-left: auto; 
+	margin-right: auto; 
+	padding-left: auto; 
+	padding-right: auto;
+}
+
+.chick_fail_center { 
+	margin-top: 10%; 
 	text-align: center; 
 	height: auto; 
 	width: auto; 
@@ -406,6 +448,9 @@ a:hover
 .chicken_output {
 	color: red; 
 	background: #d08615;
+	border-radius: 40%;
+	box-shadow: 3px 3px 5px;
+	text-align: center;
 }
 
 input:focus {
@@ -459,6 +504,15 @@ input:focus {
 	width: 100%;
 	border: solid 2px #ee6e3c;
 
+}
+
+.chicken_logout_message {
+	color: red; 
+	background: #d08615;
+	border-radius: 10%;
+	box-shadow: 3px 3px 5px;
+	width: 100px;
+	text-align: center;
 }
 
 

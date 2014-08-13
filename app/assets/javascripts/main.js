@@ -1,24 +1,37 @@
+var chick_center; 
+var chick_width;
+var chick_member;
+var loginMem;
+
+    
+        
+
 
 $(document).ready(function(){
 
     var chick_member = $('.chick_member');
 
-
-    // $(.chick_member).(function(){
+          
+    // if ($(.chick_member').val() !== ' '){
+    
         // $('.chick_index_button').addClass('hide');
         // $('.chick_logout_button').removeClass('hide');
-    // });
+    // };
 
     var chick_center = $('.chick_center');
     var chick_width = chick_center.width();
 
-    
         if (chick_width<600){
             $('.chick_slogan_wrap').addClass('chick_slogan_wrap_small')
                                     .removeClass('chick_slogan_wrap');
             $('iframe').css('width', '350', 'height', '225');
         };
-  
+        if (chick_width>600){
+            $('.chick_slogan_wrap').addClass('chick_slogan_wrap')
+                                    .removeClass('chick_slogan_wrap_small');
+            $('iframe').css ('width', '740', 'height', '300');
+        };
+   
 
 	$('.chick_index_button').click(function(){
         $('.hide_image').removeClass('hide');
@@ -156,6 +169,11 @@ $(document).ready(function(){
         var loginMem = $('input:text[name=chick_login_name]').val();
         var passwordLoginMem = $('input:text[name=chick_password]').val();
 
+        if ((loginMem==null || typeof(loginMem)=="undefined" || loginMem<1) ||
+            (passwordLoginMem==null || typeof(passwordLoginMem)=="undefined" || passwordLoginMem<1))
+            {$('.chicken_output').text("Only Anime Chicken Lovers May Enter");
+            return false;   
+        }
 
         $.ajax({
             url: '/main/memberLogin',
@@ -163,7 +181,8 @@ $(document).ready(function(){
             type: 'GET'
         }).done(function(data){
             console.log(data);
-            $(location).attr('href',"/main/member");
+           $(location).attr('href',"/main/member");
+            return true;
         });
         
     };
@@ -172,13 +191,27 @@ $(document).ready(function(){
         $.ajax({
             url: '/main/logout'
         }).done(function(){
-            window.location.replace("/");
+            $('.chicken_logout_message').text("Buh-bye, clucker");
+            $('.chicken_logout_message').fadeIn(function(){
+                setTimeout(function(){
+                $('.chicken_logout_message').fadeOut();
+                window.location.replace("/");
+                },1000);
+            });
         });
             
     });
 
+    window.onerror=function(errmsg, url, line){
+        console.log(errmsg, url, line, data);
+        $(location).attr('href',"/main/fail");
+        return true;
+    };
+
 });
    
 
+       
+        
 
 

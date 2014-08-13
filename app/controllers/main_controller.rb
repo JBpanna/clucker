@@ -1,16 +1,18 @@
 class MainController < ApplicationController
 
-  def PublicCluck
-    @publicClucks = PublicCluck.all? { |e|  }
+  def publiclucks
+    @publicClucks = PublicCluck.all
+    render json: @publicClucks
   end
 
-
-  def PrivateCluck
-    @privateClucks = PrivateCluck.all? { |e|  }
+  def privateclucks
+    @privateClucks = PrivateCluck.all
+    render json: @privateClucks
   end
 
-  def User  
-    @user=User.all? { |e|  }
+  def users 
+    @users = User.all
+    render json: @users
   end
 
   def about
@@ -23,12 +25,18 @@ class MainController < ApplicationController
   end
 
   def member
+    session[:user_id];
+    
   end
 
   def video
   end
  
   def index
+    # session[:user_id];
+  end
+
+  def fail
   end
 
    def login
@@ -63,22 +71,18 @@ class MainController < ApplicationController
 
 
     #idServer = params[:id]
+    
+     @user_login = User.all.find_by(user: loginMemServer, password: passwordMemServer)
 
-    
-    # session[:user_id] = user.id
-    
-     @user_login=User.all.find_by(user: loginMemServer)
+     session[:user_id] = @user_login.id
      
-
-     p @userlogintext = "#{loginMemServer}"
-
     # puts "****** @userLogin = #{user}"
     
     # render json: @userName.login
     # flash[:chickUser]=loginMemServer.to_s
     # session[:user_id] = user_id
     # @userName = User.find(session[:user_id]).user
-    head :ok
+    render json: @user_login
    end
 
    def logout

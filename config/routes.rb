@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-
   root 'main#index'
   get 'main/about'
   get 'main/gallery'
@@ -8,14 +7,14 @@ Rails.application.routes.draw do
   get 'main/video'
   get 'main/index'
   get 'main/member'
+  get 'main/fail'
   post 'main/login'
   post 'main/privateCluckController'
   get 'main/logout'
   get 'main/memberLogin'
   post 'main/publicCluckController'
-  
-  
-  
+    
+
 
   
 
