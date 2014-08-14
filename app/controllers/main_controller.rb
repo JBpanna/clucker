@@ -24,16 +24,12 @@ class MainController < ApplicationController
   def gallery
   end
 
-  def member
-    session[:user_id];
-    
-  end
-
   def video
   end
  
   def index
     # session[:user_id];
+    @publicClucks = PublicCluck.all
   end
 
   def fail
@@ -60,7 +56,6 @@ class MainController < ApplicationController
 
       # person=User.find_by()
       # person.destroy
-
       head :ok
     
    end
@@ -73,9 +68,9 @@ class MainController < ApplicationController
     #idServer = params[:id]
     
      @user_login = User.all.find_by(user: loginMemServer, password: passwordMemServer)
-
+     @five=5
      session[:user_id] = @user_login.id
-     
+    
     # puts "****** @userLogin = #{user}"
     
     # render json: @userName.login
@@ -83,6 +78,12 @@ class MainController < ApplicationController
     # session[:user_id] = user_id
     # @userName = User.find(session[:user_id]).user
     render json: @user_login
+   end
+
+   def member
+    session[:user_id];
+    @privateClucks = PrivateCluck.all
+    @member = User.all
    end
 
    def logout
@@ -107,7 +108,7 @@ class MainController < ApplicationController
     head :ok
   end
 
-def publicCluckController
+  def publicCluckController
     
     publicPostServer = params[:publicPost]
 
@@ -121,6 +122,9 @@ def publicCluckController
 
     # render json: test
     head :ok
+
   end
+
+ 
 
 end

@@ -1,10 +1,3 @@
-var chick_center; 
-var chick_width;
-var chick_member;
-var loginMem;
-
-    
-        
 
 
 $(document).ready(function(){
@@ -209,6 +202,8 @@ $(document).ready(function(){
     };
 
 });
+
+
    
 
        

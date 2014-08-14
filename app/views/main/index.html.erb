@@ -46,7 +46,9 @@
       <div class="chick_resources">
 
        <div class="chick_post">
-          <textarea class="public_posts" name="public_posts"><%= @publicClucks%></textarea>
+        <%@publicClucks.each do |publicCluck|%>
+          <textarea class="public_posts" name="public_posts"><%=publicCluck.public_cluck%></textarea>
+        <%end%>
        </div>
         
       </div>

@@ -13,8 +13,7 @@ Rails.application.routes.draw do
   get 'main/logout'
   get 'main/memberLogin'
   post 'main/publicCluckController'
-    
-
+ 
 
   
 
