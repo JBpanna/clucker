@@ -1,29 +1,43 @@
+var chick_member = $('.chick_member');
+var chick_center = $('.chick_center');
+var chick_width = chick_center.width();
+
+window.onresize=function(){
+
+    if ($('body').width()<600){
+        $('.chick_slogan_wrap').addClass('chick_slogan_wrap_small')
+                                .removeClass('chick_slogan_wrap');
+        $('iframe').css('width', '350', 'height', '225');
+    } 
+};
+
+$('body').onresize=function(){
+
+    if ($('body').width()>600){
+        $('.chick_slogan_wrap').addClass('chick_slogan_wrap')
+                                .removeClass('chick_slogan_wrap_small');
+        $('iframe').css('width', '740', 'height', '300');
+    } 
+};
 
 
 $(document).ready(function(){
 
-    var chick_member = $('.chick_member');
+    if ($('body').width()<600){
+        $('.chick_slogan_wrap').addClass('chick_slogan_wrap_small')
+                                .removeClass('chick_slogan_wrap');
+        $('iframe').css('width', '350', 'height', '225');
+    };
 
-          
-    // if ($(.chick_member').val() !== ' '){
-    
-        // $('.chick_index_button').addClass('hide');
-        // $('.chick_logout_button').removeClass('hide');
-    // };
+    if ($('.chick_member').text() !== '') {
+        $('.chick_index_button').addClass('hide');
+        $('.chick_logout_button').removeClass('hide');
+    }
+    else { 
+        $('.chick_index_button').removeClass('hide');
+        $('.chick_logout_button').addClass('hide');
 
-    var chick_center = $('.chick_center');
-    var chick_width = chick_center.width();
-
-        if (chick_width<600){
-            $('.chick_slogan_wrap').addClass('chick_slogan_wrap_small')
-                                    .removeClass('chick_slogan_wrap');
-            $('iframe').css('width', '350', 'height', '225');
-        };
-        if (chick_width>600){
-            $('.chick_slogan_wrap').addClass('chick_slogan_wrap')
-                                    .removeClass('chick_slogan_wrap_small');
-            $('iframe').css ('width', '740', 'height', '300');
-        };
+    }
    
 
 	$('.chick_index_button').click(function(){

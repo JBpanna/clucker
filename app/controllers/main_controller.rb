@@ -54,6 +54,10 @@ class MainController < ApplicationController
        name: nameServer)
        person.save
 
+      @user_new = User.all.find_by(user: userServer)
+
+      session[:user] = @user_new.user
+
       # person=User.find_by()
       # person.destroy
       head :ok
@@ -68,8 +72,9 @@ class MainController < ApplicationController
     #idServer = params[:id]
     
      @user_login = User.all.find_by(user: loginMemServer, password: passwordMemServer)
-     @five=5
+     session[:user] = @user_login.user
      session[:user_id] = @user_login.id
+
     
     # puts "****** @userLogin = #{user}"
     
@@ -83,7 +88,7 @@ class MainController < ApplicationController
    def member
     session[:user_id];
     @privateClucks = PrivateCluck.all
-    @member = User.all
+    @member = session[:user]
    end
 
    def logout
