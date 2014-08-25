@@ -20,8 +20,7 @@ def privateCluck
 	id=params[:id]
 	private_cluck=params[:private_cluck]
 	user_id=params[:user_id]
-	user=params[:user]
-	p id + '|' + private_cluck + '|' + user_id + '|' + user
+	p id + '|' + private_cluck + '|' + user_id
 	head :ok
 end
 
@@ -29,8 +28,7 @@ def publicCluck
 	id=params[:id]
 	public_cluck=params[:public_cluck]
 	user_id=params[:user_id]
-	user=params[:user]
-	p id + '|' + public_cluck + '|' + user_id + '|' + user
+	p id + '|' + public_cluck + '|' + user_id
 	head :ok
 end
 end

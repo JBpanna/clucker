@@ -98,13 +98,21 @@ class MainController < ApplicationController
 
 
   def privateCluckController
-    
+    @id_private = session[:user_id]
+    p @id_private
     privatePostServer = params[:privatePost]
+    user=User.all.find_by(id: @id_private)
+    # user_private = @userPrivate.user
+    # user_id_private = @userPrivate.id
+    private_clucks = PrivateCluck.joins(:user)
+                                  .where(:user_id => user.id);
+    p user
 
     testcluck = {private_cluck: privatePostServer}
 
     privateCluckVar=PrivateCluck.create(
-       private_cluck: privatePostServer)
+       private_cluck: privatePostServer,
+       user_id: user.id)
        privateCluckVar.save
 
     p "done?"
@@ -114,13 +122,20 @@ class MainController < ApplicationController
   end
 
   def publicCluckController
-    
+    @id_public = session[:user_id]
+    p @id_public
     publicPostServer = params[:publicPost]
+    user=User.all.find_by(id: @id_public)
+
+    public_clucks = PublicCluck.joins(:user)
+                                  .where(:user_id => user.id);
+    p user
 
     testcluck = {public_cluck: publicPostServer}
 
     publicCluckVar=PublicCluck.create(
-       public_cluck: publicPostServer)
+       public_cluck: publicPostServer,
+       user_id: user.id)
        publicCluckVar.save
 
     p "done?"
