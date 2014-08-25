@@ -57,7 +57,8 @@ class MainController < ApplicationController
       @user_new = User.all.find_by(user: userServer)
 
       session[:user] = @user_new.user
-
+      session[:user_id] = @user_login.id
+      
       # person=User.find_by()
       # person.destroy
       head :ok
