@@ -43,26 +43,27 @@ class MainController < ApplicationController
     
   	 
 
-  	 testlogin = {user: userServer, password: passwordServer,
+  	  testlogin = {user: userServer, password: passwordServer,
                   email: emailServer, name: nameServer}
-     p testlogin
+      p testlogin
 
-     person=User.create(
-       user: userServer,
-       password: passwordServer,
-       email: emailServer,
-       name: nameServer)
-       person.save
+      person=User.new(
+         user: userServer,
+         password: passwordServer,
+         email: emailServer,
+         name: nameServer)
+      person.save
 
-      @user_new = User.all.find_by(user: userServer)
+        @user_new = User.all.find_by(user: userServer)
 
-      session[:user] = @user_new.user
-      session[:user_id] = @user_login.id
-      
-      # person=User.find_by()
-      # person.destroy
-      head :ok
-    
+        session[:user] = @user_new.user
+        session[:user_id] = @user_new.id
+        
+        SimpleMailer.welcome_email(person).deliver
+        # person=User.find_by()
+        # person.destroy
+        render json: person
+     
    end
 
    def memberLogin
@@ -111,10 +112,10 @@ class MainController < ApplicationController
 
     testcluck = {private_cluck: privatePostServer}
 
-    privateCluckVar=PrivateCluck.create(
+    privateCluckVar=PrivateCluck.new(
        private_cluck: privatePostServer,
        user_id: user.id)
-       privateCluckVar.save
+    privateCluckVar.save
 
     p "done?"
 
@@ -134,10 +135,10 @@ class MainController < ApplicationController
 
     testcluck = {public_cluck: publicPostServer}
 
-    publicCluckVar=PublicCluck.create(
+    publicCluckVar=PublicCluck.new(
        public_cluck: publicPostServer,
        user_id: user.id)
-       publicCluckVar.save
+    publicCluckVar.save
 
     p "done?"
 
