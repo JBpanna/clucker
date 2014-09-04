@@ -67,9 +67,10 @@ class MainController < ApplicationController
    end
 
    def memberLogin
+
     loginMemServer = params[:loginMem]
     passwordMemServer = params[:passwordLoginMem]
-
+    
 
     #idServer = params[:id]
     
