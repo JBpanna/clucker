@@ -145,7 +145,7 @@ body {
 .chick_resources { 
 	background-color: #fff4c9; 
 	width: 40%; 
-	height: 600px; 
+	height: 650px; 
 	margin: 4.7%; 
 	float: left; 
 	border: solid 3px #ff7e3c; 
@@ -515,6 +515,33 @@ input:focus {
 	width: 100px;
 	text-align: center;
 }
+
+.new_friend { 
+	line-height: 30px; 
+	font-size: 22px; 
+	color: #ff881b;
+	text-align: center;
+	background-color: #fff4c9;
+	padding: 1%;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.new_friend h1{ 
+	line-height: 48px; 
+	font-size: 40px; 
+	color: red;
+	font-family: 'Chicle', sans-serif;
+}
+
+.new_friend input{  
+	font-size: 28px; 
+	margin: 5px;
+}
+
+
 
 
 

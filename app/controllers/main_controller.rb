@@ -1,20 +1,5 @@
 class MainController < ApplicationController
 
-  def publiclucks
-    @publicClucks = PublicCluck.all
-    render json: @publicClucks
-  end
-
-  def privateclucks
-    @privateClucks = PrivateCluck.all
-    render json: @privateClucks
-  end
-
-  def users 
-    @users = User.all
-    render json: @users
-  end
-
   def about
   end
 
@@ -70,7 +55,7 @@ class MainController < ApplicationController
 
     loginMemServer = params[:loginMem]
     passwordMemServer = params[:passwordLoginMem]
-    
+
 
     #idServer = params[:id]
     

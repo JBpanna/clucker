@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   get 'main/logout'
   get 'main/memberLogin'
   post 'main/publicCluckController'
-  post 'user_friendship/new'
+  post 'user_friendships/create'
+  get 'user_friendships/new'
   
  
 

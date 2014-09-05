@@ -5,6 +5,21 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 helper_method :_current_user, :_get_plugin_name
 
+def publiclucks
+    @publicClucks = PublicCluck.all
+    render json: @publicClucks
+end
+
+def privateclucks
+    @privateClucks = PrivateCluck.all
+    render json: @privateClucks
+end
+
+def users 
+    @users = User.all
+    render json: @users
+end
+
 def user
 
 	id=params[:id]
