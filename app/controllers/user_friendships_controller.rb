@@ -28,7 +28,7 @@ class UserFriendshipsController < ApplicationController
 		p "no friend id"
 		redirect_to root_url
 		end
-		head :ok
+		render json: @user_friendship
 
 	end
 end

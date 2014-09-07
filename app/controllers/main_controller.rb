@@ -1,5 +1,9 @@
 class MainController < ApplicationController
 
+  def create
+    User.create(user_params)
+  end
+
   def about
   end
 
@@ -13,8 +17,13 @@ class MainController < ApplicationController
   end
  
   def index
-    # session[:user_id];
-    @publicClucks = PublicCluck.all
+    public_clucks = PublicCluck.all
+      @id_public = public_clucks.select{|user_id| user_id != nil || undefined}
+        p @id_public
+
+      @publicClucks = PublicCluck.joins(:user)
+                                  .where(:user_id => @id_public);
+      
   end
 
   def fail
@@ -75,7 +84,10 @@ class MainController < ApplicationController
 
    def member
     session[:user_id];
-    @privateClucks = PrivateCluck.all
+    @id_private = session[:user_id]
+    user=User.all.find_by(id: @id_private)
+    @privateClucks = PrivateCluck.joins(:user)
+                                  .where(:user_id => user.id);
     @member = session[:user]
    end
 
@@ -105,8 +117,8 @@ class MainController < ApplicationController
 
     p "done?"
 
-    # render json: test
-    head :ok
+    render json: privateCluckVar
+    
   end
 
   def publicCluckController
@@ -117,6 +129,7 @@ class MainController < ApplicationController
 
     public_clucks = PublicCluck.joins(:user)
                                   .where(:user_id => user.id);
+    
     p user
 
     testcluck = {public_cluck: publicPostServer}
@@ -128,11 +141,10 @@ class MainController < ApplicationController
 
     p "done?"
 
-    # render json: test
-    head :ok
+    render json: publicCluckVar
+    
 
   end
-
  
 
 end

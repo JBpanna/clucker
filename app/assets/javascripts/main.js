@@ -63,7 +63,12 @@ $(document).ready(function(){
         $('.chick_lname').val('');
         $('.chick_email').val('');
 
-	});  				
+	});
+
+    $('#chick_friend_cancel_button').click(function(){
+        $('.chick_friend').val('');
+        
+    });                   				
 
     $('#chick_signup_button').click(function(){ 
         Signup();
@@ -160,6 +165,34 @@ $(document).ready(function(){
             });
         
     });
+
+     $('#chick_friend_button').click(function(event){
+        event.preventDefault();
+        var addFriendshipbtn = $(this);
+        
+        var PeepInput=$('input:text[name=chick_friend]').val();
+
+        if (PeepInput==null || typeof(PeepInput)=="undefined" || PeepInput<1)
+            {$('.chick_public_error').append("I didn't quite get that. Could you type it again?");
+            return false;
+        }
+    
+        if (publicCluckInput.length>142)
+            {$('#friend_error').text("Don't be shy, Cluckie. Type your new Peep.");
+            return false;   
+            }
+            
+            $.ajax({
+                url: '/user_friendships/create',
+                data: { Peep: PeepInput},
+                type: 'POST'
+            }).done(function(data){
+                console.log(data);
+                $('.chick_friend').val('');
+            });
+        
+    });
+
 
 
    $('#chick_continue_button').click(function(){ 

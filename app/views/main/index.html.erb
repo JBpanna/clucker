@@ -47,7 +47,7 @@
 
        <div class="chick_post">
         <%@publicClucks.each do |publicCluck|%>
-          <textarea class="public_posts" name="public_posts"><%= publicCluck.user_id %><%=publicCluck.public_cluck%></textarea>
+          <textarea class="public_posts" name="public_posts"><%= publicCluck.user.user%>:  <%=publicCluck.public_cluck%></textarea>
         <%end%>
        </div>
         
