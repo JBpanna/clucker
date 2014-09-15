@@ -242,6 +242,8 @@ $(document).ready(function(){
             
     });
 
+    
+
     window.onerror=function(errmsg, url, line){
         console.log(errmsg, url, line, data);
         $(location).attr('href',"/main/fail");
