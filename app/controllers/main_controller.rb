@@ -143,7 +143,18 @@ class MainController < ApplicationController
 
     render json: publicCluckVar
     
+  end
 
+  def publicImageController
+    @publicImage = PublicImage.new(params[:public_image_form])
+    @publicImage.save
+    render json: => @publicImage
+  end
+
+  def privateImageController
+    @privateImage = PrivateImage.new(params[:private_image_form])
+    @privateImage.save
+    render json: => @privateImage
   end
  
 
