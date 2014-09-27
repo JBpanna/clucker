@@ -3,7 +3,7 @@ class CreatePrivateImages < ActiveRecord::Migration
     create_table :private_images do |t|
       t.string :privateImageName
       t.binary :privateImagePic
-
+      
       t.timestamps
     end
   end

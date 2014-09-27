@@ -30,7 +30,14 @@
           </li>
 
           <li>
-            <a> Pictures of Your Animated Chicken Love </a>
+            
+            <span class="chick_private_post"> Post about your Animated Chicken Love </span>
+            <input type="file" class="public_image" name="public_image">
+            <input type="text" class="public_image_name" name="public_image_name">
+            <button type="button" class="btn-public-image btn-danger">Cluck!</button>
+            </br>
+            <div class="chick_private_error chicken_output">  </div>
+
           </li>
           <li>
           <a> Videos of Your Animated Chicken Love </a>
@@ -50,7 +57,17 @@
          
           </li>
           <li>
-            <a> Private Pictures of Your Animated Chicken Obessions </a>
+            
+          <span class="chick_private_post"> Post to Your Closest Peeps about your Animated Chicken Love </span>
+            <input type="file" class="private_image" name="private_image">
+            <input type="text" class="private_image_name" name="private_image_name">
+            <button type="button" class="btn-private-image btn-danger">Cluck!</button>
+            </br>
+            <div class="chick_private_error chicken_output">  </div>
+
+          <%@privateImages.each do |privateImage|%>
+            <div><%= privateImage.user.user%>:  <%=privateImage.privateImagePic%>  <%=privateImage.privateImageName%> (<%= time_ago_in_words(privateImage.updated_at) %>)</div>
+          <%end%>
           </li>
           <li>
             <a> Private Videos of Your Animated Chicken Love, for You and Your Peeps Only! </a>

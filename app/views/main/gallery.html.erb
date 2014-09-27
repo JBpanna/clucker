@@ -32,6 +32,10 @@
 
       <img src="http://oishiianime.com/wp-content/uploads/2012/12/Humanity-Has-Declined-Chicken.jpg" class="img-responsive chick_image">
 
+      <%@publicImages.each do |publicImage|%>
+          <div><%= publicImage.user.user%>:  <%=publicImage.publicImagePic%>  <%=publicImage.publicImageName%> (<%= time_ago_in_words(publicImage.updated_at) %>)</div>
+      <%end%>
+
 
      </div>
   </div>

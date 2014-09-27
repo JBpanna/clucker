@@ -15,10 +15,9 @@ Rails.application.routes.draw do
   post 'main/publicCluckController'
   post 'user_friendships/create'
   get 'user_friendships/new'
-  
- 
+  post 'main/publicImageController'
+  post 'main/privateImageController'
 
-  
 
 
   # The priority is based upon order of creation: first created -> highest priority.

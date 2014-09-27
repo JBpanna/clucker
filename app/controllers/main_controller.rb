@@ -23,6 +23,14 @@ class MainController < ApplicationController
 
       @publicClucks = PublicCluck.joins(:user)
                                   .where(:user_id => @id_public);
+
+    public_image = PublicImage.all
+      @id_publicImage = public_images.select{|user_id| user_id != nil || undefined}
+        p @id_publicImage
+
+      @publicImages = PublicImage.joins(:user)
+                                  .where(:user_id => @id_publicImage);
+      
       
   end
 
@@ -88,6 +96,10 @@ class MainController < ApplicationController
     user=User.all.find_by(id: @id_private)
     @privateClucks = PrivateCluck.joins(:user)
                                   .where(:user_id => user.id);
+    @id_privateImage = session[:user_id]
+    user=User.all.find_by(id: @id_privateImage)
+    @privateImages = PrivateImage.joins(:user)
+                                  .where(:user_id => user.id);
     @member = session[:user]
    end
 
@@ -146,15 +158,58 @@ class MainController < ApplicationController
   end
 
   def publicImageController
-    @publicImage = PublicImage.new(params[:public_image_form])
+    @id_publicImage = session[:user_id]
+    p @id_publicImage
+    publicImageNameServer = params[:publicImageTitle]
+    publicImagePicServer = params[:publicPic]
+    user=User.all.find_by(id: @id_publicImage)
+
+    public_images = PublicImage.joins(:user)
+                                  .where(:user_id => user.id);
+    
+    p user
+
+    testPublicImage = {public_image: publicImagePicServer}
+
+    @publicImage = PublicImage.new(
+      user_id: user.id,
+      publicImageName: publicImageNameServer,
+      publicImagePic: publicImagePicServer)
     @publicImage.save
-    render json: => @publicImage
+
+    p "done?"
+
+    render json: @publicImage
   end
 
   def privateImageController
-    @privateImage = PrivateImage.new(params[:private_image_form])
+    @id_privateImage = session[:user_id]
+    p @id_privateImage
+    privateImageNameServer = params[:privateImageTitle]
+    privateImagePicServer = params[:privatePic]
+    user=User.all.find_by(id: @id_privateImage)
+
+    private_images = PrivateImage.joins(:user)
+                                  .where(:user_id => user.id);
+    
+    p user
+
+    testPrivateImage = {private_image: privateImagePicServer}
+
+    @privateImage = PrivateImage.new(
+      user_id: user.id,
+      publicImageName: privateImageNameServer,
+      publicImagePic: privateImagePicServer)
     @privateImage.save
-    render json: => @privateImage
+
+    p "done?"
+
+    render json: @privateImage
+
+
+  #   # @privateImage = PrivateImage.new(params[:private_image_form])
+  #   # @privateImage.save
+  #   # render json: = @privateImage
   end
  
 

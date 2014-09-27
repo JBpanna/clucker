@@ -166,6 +166,61 @@ $(document).ready(function(){
         
     });
 
+    $('.btn-private-image').click(function(){
+
+        var privateImageNameInput=$('input:text[name=private_image_name]').val();
+        var privateImageInput=$('input:file[name=private_image]').val();
+
+        if (privateImageInput==null || typeof(privateImageInput)=="undefined" || privateImageInput<1)
+            {$('.chick_private_error').append("Don't be shy. Let's see the picture.");
+            return false;
+        }
+    
+        if (privateImageNameInput.length>142)
+            {$('.chick_private_error').text("Woah! Too much information.");
+            return false;   
+            }
+            
+            $.ajax({
+                url: '/main/privateImageController',
+                data: { privateImageTitle: privateImageNameInput, privatePic: privateImageInput},
+                type: 'POST'
+            }).done(function(data){
+                console.log(data);
+                $('.private_image_name').val('');
+                $('.private_image').val('');
+            });
+        
+    });
+
+
+     $('.btn-public-image').click(function(){
+
+        var publicImageNameInput=$('input:text[name=public_image_name]').val();
+        var publicImageInput=$('input:file[name=public_image]').val();
+
+        if (publicImageInput==null || typeof(publicImageInput)=="undefined" || publicImageInput<1)
+            {$('.chick_public_error').append("Don't be shy. Let's see the picture.");
+            return false;
+        }
+    
+        if (publicImageNameInput.length>142)
+            {$('.chick_public_error').text("Woah! Too much information.");
+            return false;   
+            }
+            
+            $.ajax({
+                url: '/main/publicImageController',
+                data: { publicImageTitle: publicImageNameInput, publicPic: publicImageInput},
+                type: 'POST'
+            }).done(function(data){
+                console.log(data);
+                $('.public_image_name').val('');
+                $('.public_image').val('');
+            });
+        
+    });
+
      $('#chick_friend_button').click(function(event){
         event.preventDefault();
         var addFriendshipbtn = $(this);
