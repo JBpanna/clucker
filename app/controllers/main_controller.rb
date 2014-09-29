@@ -11,6 +11,14 @@ class MainController < ApplicationController
   end
 
   def gallery
+
+    public_images = PublicImage.all
+      @id_publicImage = public_images.select{|user_id| user_id != nil || undefined}
+        p @id_publicImage
+
+      @publicImages = PublicImage.joins(:user)
+                                  .where(:user_id => @id_publicImage);
+                                  
   end
 
   def video
@@ -24,12 +32,7 @@ class MainController < ApplicationController
       @publicClucks = PublicCluck.joins(:user)
                                   .where(:user_id => @id_public);
 
-    public_image = PublicImage.all
-      @id_publicImage = public_images.select{|user_id| user_id != nil || undefined}
-        p @id_publicImage
-
-      @publicImages = PublicImage.joins(:user)
-                                  .where(:user_id => @id_publicImage);
+    
       
       
   end

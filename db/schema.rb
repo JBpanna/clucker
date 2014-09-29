@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140927164125) do
   create_table "private_images", force: true do |t|
     t.string   "privateImageName"
     t.binary   "privateImagePic"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140927164125) do
   create_table "public_images", force: true do |t|
     t.string   "publicImageName"
     t.binary   "publicImagePic"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
